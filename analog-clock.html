@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" ng-attr-width="{{clockWidth}}" ng-attr-height="{{clockHeight}}" id="clock-face">
+    <g>
+        <circle id="clock-face" ng-attr-cx="{{x}}" ng-attr-cy="{{y}}" ng-attr-r="{{r}}" ng-show="{{showClockFace}}"/>
+
+        <line id="h-hand" ng-attr-x1="{{x}}" ng-attr-y1="{{y}}" ng-attr-x2="{{x}}" ng-attr-y2="{{hrY2}}"
+              ng-attr-transform="rotate({{hourRotation}} {{x}} {{y}})"/>
+        <line id="m-hand" ng-attr-x1="{{x}}" ng-attr-y1="{{y}}" ng-attr-x2="{{x}}" ng-attr-y2="{{minY2}}"
+              ng-attr-transform="rotate({{minuteRotation}} {{x}} {{y}})"/>
+        <line id="s-hand" ng-attr-x1="{{x}}" ng-attr-y1="{{y}}" ng-attr-x2="{{x}}" ng-attr-y2="{{secY2}}"
+              ng-attr-transform="rotate({{secondRotation}} {{x}} {{y}})" ng-show="{{showSeconds}}"/>
+    </g>
+</svg>
