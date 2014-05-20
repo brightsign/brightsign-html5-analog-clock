@@ -1,5 +1,7 @@
 #clock-face {
     background-image: url('clock.jpg');
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 #h-hand {

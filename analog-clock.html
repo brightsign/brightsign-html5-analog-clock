@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" ng-attr-width="{{clockWidth}}" ng-attr-height="{{clockHeight}}" id="clock-face">
+<svg xmlns="http://www.w3.org/2000/svg" ng-attr-width="{{w}}" ng-attr-height="{{h}}" id="background" ng-style="background">
     <g>
-        <circle id="clock-face" ng-attr-cx="{{x}}" ng-attr-cy="{{y}}" ng-attr-r="{{r}}" ng-show="{{showClockFace}}"/>
+        <circle id="face" ng-attr-cx="{{x1}}" ng-attr-cy="{{y1}}" ng-attr-r="{{radius}}" ng-show="{{drawFace}}" ng-style="face"/>
 
-        <line id="h-hand" ng-attr-x1="{{x}}" ng-attr-y1="{{y}}" ng-attr-x2="{{x}}" ng-attr-y2="{{hrY2}}"
-              ng-attr-transform="rotate({{hourRotation}} {{x}} {{y}})"/>
-        <line id="m-hand" ng-attr-x1="{{x}}" ng-attr-y1="{{y}}" ng-attr-x2="{{x}}" ng-attr-y2="{{minY2}}"
-              ng-attr-transform="rotate({{minuteRotation}} {{x}} {{y}})"/>
-        <line id="s-hand" ng-attr-x1="{{x}}" ng-attr-y1="{{y}}" ng-attr-x2="{{x}}" ng-attr-y2="{{secY2}}"
-              ng-attr-transform="rotate({{secondRotation}} {{x}} {{y}})" ng-show="{{showSeconds}}"/>
+        <line id="h-hand" ng-style="hHand" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
+              ng-attr-y2="{{hrY2}}"
+              ng-attr-transform="rotate({{hourRotation}} {{x1}} {{y1}})"/>
+        <line id="m-hand" ng-style="mHand" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
+              ng-attr-y2="{{minY2}}"
+              ng-attr-transform="rotate({{minuteRotation}} {{x1}} {{y1}})"/>
+        <line id="s-hand" ng-style="sHand" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
+              ng-attr-y2="{{secY2}}"
+              ng-attr-transform="rotate({{secondRotation}} {{x1}} {{y1}})" ng-show="{{seconds}}"/>
     </g>
 </svg>

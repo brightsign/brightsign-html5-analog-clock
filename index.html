@@ -4,9 +4,12 @@
     <script src="app.js"></script>
     <script src="components.js"></script>
     <script src="controllers.js"></script>
-    <link href="styles.css" rel="stylesheet"/>
+    <script src="services.js"></script>
 </head>
 <body ng-controller="bsController">
-<analog-clock x="450" y="450" r="400" w="900" h="900" show-seconds="true" show-clock-face="false"> </analog-clock>
+<analog-clock x="{{x}}" y="{{y}}" r="{{r}}" w="{{w}}" h="{{h}}" seconds="{{seconds}}" draw-face="{{drawFace}}"
+              face="face" background="background"
+              h-hand="hHand"
+              m-hand="mHand" s-hand="sHand" tz-offset="{{tzOffset}}"></analog-clock>
 </body>
 </html>
