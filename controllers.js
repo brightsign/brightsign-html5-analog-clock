@@ -3,29 +3,29 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     // Defaults for styles
 
     // Background image
-    $scope.background = {
+    $scope.backgroundStyle = {
         'background-repeat': 'no-repeat'
     };
     // Clock face (if drawn)
-    $scope.face = {
+    $scope.faceStyle = {
         'fill': 'black'
     };
     // Hour hand
-    $scope.hHand = {
+    $scope.hHandStyle = {
         'stroke-width': '24px',
         'stroke': '#333',
         'stroke-linecap': 'round',
         opacity: 0.9
     };
     // Minute hand
-    $scope.mHand = {
+    $scope.mHandStyle = {
         'stroke-width': '14px',
         stroke: '#888',
         'stroke-linecap': 'round',
         opacity: 0.9
     };
     // Second hand
-    $scope.sHand = {
+    $scope.sHandStyle = {
         'stroke-width': '10px',
         stroke: '#bb0000',
         'stroke-linecap': 'round',
@@ -36,30 +36,30 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     $scope.drawFace = true;
     if (clockFormat.path || clockFormat.face || clockFormat.backgroundImage) {
         var backgroundImage = clockFormat.path || clockFormat.face || clockFormat.backgroundImage;
-        $scope.background['background-image'] = 'url(' + backgroundImage + ')';
+        $scope.backgroundStyle['background-image'] = 'url(' + backgroundImage + ')';
         $scope.drawFace = false;
     }
     // Face color (if drawn)
     if (clockFormat.fColor) {
-        $scope.face['fill'] = clockFormat.fColor;
+        $scope.faceStyle['fill'] = clockFormat.fColor;
     }
     // Hand color
     if (clockFormat.color) {
-        $scope.hHand['stroke'] = clockFormat.color;
-        $scope.mHand['stroke'] = clockFormat.color;
-        $scope.sHand['stroke'] = clockFormat.color;
+        $scope.hHandStyle['stroke'] = clockFormat.color;
+        $scope.mHandStyle['stroke'] = clockFormat.color;
+        $scope.sHandStyle['stroke'] = clockFormat.color;
     }
     // Hour hand color
     if (clockFormat.hColor) {
-        $scope.hHand['stroke'] = clockFormat.hColor;
+        $scope.hHandStyle['stroke'] = clockFormat.hColor;
     }
     // Minute hand color
     if (clockFormat.mColor) {
-        $scope.mHand['stroke'] = clockFormat.mColor;
+        $scope.mHandStyle['stroke'] = clockFormat.mColor;
     }
     // Second hand color
     if (clockFormat.sColor) {
-        $scope.sHand['stroke'] = clockFormat.sColor;
+        $scope.sHandStyle['stroke'] = clockFormat.sColor;
     }
     // Show second hand
     $scope.seconds = true;
@@ -68,15 +68,15 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     }
 
     // Hand style: 'round' or 'square' or 'butt'
-    if (clockFormat.style || clockFormat.strokeLinecap) {
-        $scope.hHand['stroke-linecap'] = clockFormat.style || clockFormat.strokeLinecap;
-        $scope.mHand['stroke-linecap'] = clockFormat.style || clockFormat.strokeLinecap;
-        $scope.sHand['stroke-linecap'] = clockFormat.style || clockFormat.strokeLinecap;
+    if (clockFormat.lineCap) {
+        $scope.hHandStyle['stroke-linecap'] = clockFormat.lineCap;
+        $scope.mHandStyle['stroke-linecap'] = clockFormat.lineCap;
+        $scope.sHandStyle['stroke-linecap'] = clockFormat.lineCap;
     }
     if (clockFormat.opacity) {
-        $scope.hHand['opacity'] = clockFormat.opacity;
-        $scope.mHand['opacity'] = clockFormat.opacity;
-        $scope.sHand['opacity'] = clockFormat.opacity;
+        $scope.hHandStyle['opacity'] = clockFormat.opacity;
+        $scope.mHandStyle['opacity'] = clockFormat.opacity;
+        $scope.sHandStyle['opacity'] = clockFormat.opacity;
     }
 
     $scope.x = 0;
@@ -101,7 +101,7 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
         $scope.r = clockFormat.r;
     }
     // Timezone
-    if (clockFormat.timezone) {
-        $scope.tzOffset = parseInt(clockFormat.timezone);
+    if (clockFormat.tzOffset) {
+        $scope.tzOffset = parseInt(clockFormat.tzOffset);
     }
 });

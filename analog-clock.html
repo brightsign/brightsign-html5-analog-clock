@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" ng-attr-width="{{w}}" ng-attr-height="{{h}}" id="background" ng-style="background">
+<svg xmlns="http://www.w3.org/2000/svg" ng-attr-width="{{w}}" ng-attr-height="{{h}}" id="background" ng-style="backgroundStyle">
     <g>
-        <circle id="face" ng-attr-cx="{{x1}}" ng-attr-cy="{{y1}}" ng-attr-r="{{radius}}" ng-show="{{drawFace}}" ng-style="face"/>
+        <circle id="face" ng-attr-cx="{{x1}}" ng-attr-cy="{{y1}}" ng-attr-r="{{radius}}" ng-show="{{drawFace}}" ng-style="faceStyle"/>
 
-        <line id="h-hand" ng-style="hHand" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
+        <line id="h-hand" ng-style="hHandStyle" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
               ng-attr-y2="{{hrY2}}"
               ng-attr-transform="rotate({{hourRotation}} {{x1}} {{y1}})"/>
-        <line id="m-hand" ng-style="mHand" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
+        <line id="m-hand" ng-style="mHandStyle" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
               ng-attr-y2="{{minY2}}"
               ng-attr-transform="rotate({{minuteRotation}} {{x1}} {{y1}})"/>
-        <line id="s-hand" ng-style="sHand" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
+        <line id="s-hand" ng-style="sHandStyle" ng-attr-x1="{{x1}}" ng-attr-y1="{{y1}}" ng-attr-x2="{{x2}}"
               ng-attr-y2="{{secY2}}"
               ng-attr-transform="rotate({{secondRotation}} {{x1}} {{y1}})" ng-show="{{seconds}}"/>
     </g>
