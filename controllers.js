@@ -63,15 +63,15 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     }
     // Hour hand width
     if (clockFormat.hWidth) {
-        $scope.hHandStyle['stroke-width'] = clockFormat.hWidth;
+        $scope.hHandStyle['stroke-width'] = parseInt(clockFormat.hWidth) + 'px';
     }
     // Minute hand width
     if (clockFormat.mWidth) {
-        $scope.mHandStyle['stroke-width'] = clockFormat.mWidth;
+        $scope.mHandStyle['stroke-width'] = parseInt(clockFormat.mWidth) + 'px';
     }
     // Second hand width
     if (clockFormat.sWidth) {
-        $scope.sHandStyle['stroke-width'] = clockFormat.sWidth;
+        $scope.sHandStyle['stroke-width'] = parseInt(clockFormat.sWidth) + 'px';
     }
     // Show second hand
     $scope.seconds = true;
