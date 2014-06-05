@@ -42,6 +42,7 @@ parameters (eg mHandStyle).
 - hColor: Optional. Hour hand color. Default: #333
 - mColor: Optional. Minute hand color. Default: #888
 - sColor: Optional. Second hand color. Default: #bb0000
+- hWidth, mWidth, sWidth: Optional. Hour, Minute, Second hand width. Defaults: 24, 14, 10 pixels
 - lineCap: Optional. Hand style: 'round', 'square' or 'butt'. Default: round
 - opacity: Optional. Range: 0-1.0. Opacity of text or hands. Default: 1.0.
 
