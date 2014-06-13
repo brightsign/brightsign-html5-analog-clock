@@ -1,0 +1,7 @@
+/* Analog Clock */
+
+/* Override the user agent stylesheet margins */
+* {
+    margin: 0;
+    padding: 0;
+}
