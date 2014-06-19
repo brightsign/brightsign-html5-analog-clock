@@ -107,6 +107,10 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     if (clockFormat.h) {
         $scope.h = parseInt(clockFormat.h);
     }
+    if (! $scope.drawFace) {
+        // A background image was provided; scale it
+        $scope.backgroundStyle['background-size'] = $scope.w + ' ' + $scope.h;
+    }
     // Radius, can be pixels or %
     $scope.r = '100%';
     if (clockFormat.r) {

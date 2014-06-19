@@ -36,7 +36,7 @@ parameters (eg mHandStyle).
 
 ## Query String Parameters
 
-- face: Optional. Clock face background image, can be specified using 'path', 'face' or 'backgroundImage'. Default: draw a face
+- face: Optional. Clock face background image, can be specified using 'path', 'face' or 'backgroundImage'. Clock image is scaled to match w, h. Default: draw a face.
 - fColor: Optional. Face color (if drawn). Default: black
 - color: Optional. Hand color (individual hand colors can override this). Default: see individual hand colors
 - hColor: Optional. Hour hand color. Default: #333
