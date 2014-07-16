@@ -20,7 +20,7 @@ parameters (eg mHandStyle).
 
 ## Common Parameters
 
-- w, h: Optional. Width and height in pixels. Must match the clock background image, if supplied (see 'face'). Default: 900
+- w, h: Optional. Width and height in pixels. Default: 900
 - x, y: Optional. Offset in pixels from center. Moves the hands from the center position by x, y. Default: 0
 - r: Optional. Radius of second hand, can be pixels or %. Default: 100%. Hour hand is 80% of second hand length, and minute hand is 60% of second hand length
 - tzOffset: Optional. In minutes relative to UTC. This overrides the time on the BS player. Default: same as the player's tzOffset.

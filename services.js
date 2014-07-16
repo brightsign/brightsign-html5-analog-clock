@@ -33,6 +33,14 @@ bsApp.factory('clockFormat', function ($location) {
     angular.forEach(myArgsAry, function (arg) {
         var myArgAry = arg.split('=');
         ret[myArgAry[0]] = myArgAry[1];
-    })
+    });
     return ret;
 });
+
+// Creates message port singleton
+bsApp.factory('msgPort',
+    function () {
+        console.log('Services: Creating msgPort');
+        return new BSMessagePort();
+    }
+);

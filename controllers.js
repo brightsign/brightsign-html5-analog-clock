@@ -1,4 +1,4 @@
-bsApp.controller('bsController', function ($scope, clockFormat) {
+bsApp.controller('bsController', function ($scope, clockFormat, msgPort) {
 
     // Defaults for styles
 
@@ -119,5 +119,13 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     // Timezone
     if (clockFormat.tzOffset) {
         $scope.tzOffset = parseInt(clockFormat.tzOffset);
+    }
+    // Let brightscript know that the page has finished rendering
+    console.log("=== JS: Sending load-finished from javascript to brightscript");
+    msgPort.PostBSMessage({type: "load-finished"});
+
+    msgPort.onbsmessage = function (msg) {
+            msgType = msg.data["msgtype"];
+            console.log("=== JS: Received message from brightscript, type=" + msgType);
     }
 });
