@@ -1,6 +1,6 @@
 'use strict';
 
-bsApp.directive('analogClock', function ($interval, bsUtils) {
+bsApp.directive('analogClock', function ($interval, $timeout, bsUtils) {
     return {
         restrict: 'E',
         scope: {
@@ -16,7 +16,8 @@ bsApp.directive('analogClock', function ($interval, bsUtils) {
             sHandStyle: '=',
             tzOffset: '@',
             seconds: '@',
-            drawFace: '@'
+            drawFace: '@',
+            portrait: '@'
         },
         templateUrl: 'analog-clock.html',
         link: function ($scope) {
@@ -66,6 +67,14 @@ bsApp.directive('analogClock', function ($interval, bsUtils) {
                 $scope.calculateRotation()
             }, 1000);
             $scope.calculateRotation();
+            // This timeout enables the page to fully load before attempting to change certain characteristics, eg portrait
+            $timeout(function () {
+                if ($scope.portrait=='true') {
+                    $scope.$apply(function () {
+                        $scope.backgroundStyle['-webkit-transform'] = 'rotate(90deg)';
+                    });
+                }
+            });
         }
     };
 });

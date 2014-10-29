@@ -120,4 +120,6 @@ bsApp.controller('bsController', function ($scope, clockFormat) {
     if (clockFormat.tzOffset) {
         $scope.tzOffset = parseInt(clockFormat.tzOffset);
     }
+    // Portrait mode (handled in the directive)
+    $scope.portrait = clockFormat.portrait;
 });

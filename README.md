@@ -5,10 +5,13 @@ BrightSign HTML5 Analog Clock
 &lt;analog-clock x=&quot;{{x}}&quot; y=&quot;{{y}}&quot; r=&quot;{{r}}&quot; w=&quot;{{w}}&quot; h=&quot;{{h}}&quot; seconds=&quot;{{seconds}}&quot; draw-face=&quot;{{drawFace}}&quot;
               face-style=&quot;faceStyle&quot; background-style=&quot;backgroundStyle&quot;
               h-hand-style=&quot;hHandStyle&quot;
-              m-hand-style=&quot;mHandStyle&quot; s-hand-style=&quot;sHandStyle&quot; tz-offset=&quot;{{tzOffset}}&quot;&gt;&lt;/analog-clock&gt;
+              m-hand-style=&quot;mHandStyle&quot; s-hand-style=&quot;sHandStyle&quot;
+              tz-offset=&quot;{{tzOffset}}&quot;
+              portrait=&quot;{{portrait}}&quot;
+              &gt;&lt;/analog-clock&gt;
 
 
-All of the parameters, namely x, y, r, w, h, seconds, drawFace, face, backgroundStyle, hHandStyle, mHandStyle, sHandStyle, tzOffset are typically supplied as a querystring, for example:
+All of the parameters, namely x, y, r, w, h, seconds, drawFace, face, backgroundStyle, hHandStyle, mHandStyle, sHandStyle, tzOffset, portrait are typically supplied as a querystring, for example:
 
 http://localhost/index.html#?format=lineCap%3Dround%3Bw%3D900%3Bh%3D900%3BtzOffset%3D320%3Bopacity%3D0.8%3Bcolor%3Dblue%3Br%3D90%25%3BhColor%3D%23333%3BmColor%3D%23888%3BfColor%3D%23159%3Bseconds%3Dfalse
 
@@ -24,7 +27,8 @@ parameters (eg mHandStyle).
 - x, y: Optional. Offset in pixels from center. Moves the hands from the center position by x, y. Default: 0
 - r: Optional. Radius of second hand, can be pixels or %. Default: 100%. Hour hand is 80% of second hand length, and minute hand is 60% of second hand length
 - tzOffset: Optional. In minutes relative to UTC. This overrides the time on the BS player. Default: same as the player's tzOffset.
-- seconds: Optional. Show second hand. Default: true
+- seconds: Optional boolean. Show second hand. Default: true
+- portrait: Optional boolean. Rotates the clock by 90 degrees. Default: false
 
 ## API Parameters
 
