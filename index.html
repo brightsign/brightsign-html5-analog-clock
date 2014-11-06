@@ -8,8 +8,7 @@
     <link href="analog-clock.css" rel="stylesheet"/>
 </head>
 <body ng-controller="bsController">
-<!-- See http://www.w3.org/Style/Examples/007/center.en.html#vertical3 -->
-<div style="position: absolute; top: 50%; left: 50%; margin-right: -50%; -webkit-transform: translate(-50%, -50%)">
+<div id="main">
     <analog-clock x="{{x}}" y="{{y}}" r="{{r}}" w="{{w}}" h="{{h}}" seconds="{{seconds}}" draw-face="{{drawFace}}"
                   face-style="faceStyle" background-style="backgroundStyle"
                   h-hand-style="hHandStyle"
